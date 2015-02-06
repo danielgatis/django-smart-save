@@ -44,9 +44,9 @@ application to your `INSTALLED_APPS` list::
         'smart_save',
     )
 
-You can specify a different method name in your project settings:
+You can specify a different method name in your project settings (default: save_if_valid):
 
-    SMART_SAVE_METHOD = 'my_save' (default: save_if_valid)
+    SMART_SAVE_METHOD = 'my_save'
 
 Or if you want to override the default save method:
 
