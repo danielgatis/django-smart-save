@@ -15,8 +15,7 @@ More info:
 
 * "Why doesn't django's model.save() call full clean?"
     http://stackoverflow.com/questions/4441539/
-* "Model docs imply that ModelForm will call Model.full_clean(),
-    but it won't."
+* "Model docs imply that ModelForm will call Model.full_clean(), but it won't."
     https://code.djangoproject.com/ticket/13100
 
 
