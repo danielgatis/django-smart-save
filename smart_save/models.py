@@ -2,10 +2,13 @@ import sys
 
 from django.conf import settings
 from django.db.models import Model
-from django.core.exceptions import ValidationError, NON_FIELD_ERRORS
+from django.core.exceptions import ValidationError
 
 
-def save_if_valid(self, *args, **kwargs):
+SMART_SAVE_METHOD = getattr(settings, 'SMART_SAVE_METHOD', 'save_if_valid')
+
+
+def save_if_valid(self, throw_exception=False, *args, **kwargs):
     """Make :meth:`save` call :meth:`full_clean`.
 
     Do you think Django models ``save`` method will validate all fields
@@ -23,17 +26,20 @@ def save_if_valid(self, *args, **kwargs):
     try:
         self.full_clean()
         self.save(*args, **kwargs)
-     
+
         return True
-    
+
     except ValidationError:
         e = sys.exc_info()[1]
 
         self._errors = {}
         for k, v in e.message_dict.items():
             self._errors[k] = v
-        
+
+        if throw_exception:
+            raise
+
         return False
 
 
-Model.add_to_class(getattr(settings, 'SMART_SAVE_METHOD', 'save_if_valid'), save_if_valid)
+Model.add_to_class(SMART_SAVE_METHOD, save_if_valid)
