@@ -36,10 +36,10 @@ def save_if_valid(self, throw_exception=False, *args, **kwargs):
         for k, v in e.message_dict.items():
             self._errors[k] = v
 
-        if throw_exception:
-            raise
+        if not throw_exception:
+            return False
 
-        return False
+        raise
 
 
 Model.add_to_class(SMART_SAVE_METHOD, save_if_valid)
