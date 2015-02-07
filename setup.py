@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-samart-save',
-    version='0.0.2',
+    version='0.0.5',
     description='Automatically validates when you call your model’s save()',
     author='Daniel Gatis Carrazzoni',
     author_email='danielgatis@gmail.com',
