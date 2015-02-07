@@ -42,4 +42,5 @@ def save_if_valid(self, throw_exception=False, *args, **kwargs):
         return False
 
 
+Model.add_to_class('_errors', [])
 Model.add_to_class(SMART_SAVE_METHOD, save_if_valid)
