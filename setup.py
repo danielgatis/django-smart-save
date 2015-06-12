@@ -3,7 +3,7 @@
 from setuptools import find_packages, setup
 
 setup(
-    name='django-samart-save',
+    name='django-smart-save',
     version='0.0.6',
     description='Automatically validates when you call your model’s save()',
     author='Daniel Gatis Carrazzoni',
