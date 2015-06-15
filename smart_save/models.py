@@ -8,6 +8,9 @@ from django.core.exceptions import ValidationError
 SMART_SAVE_METHOD = getattr(settings, 'SMART_SAVE_METHOD', 'save_if_valid')
 
 
+original_model_save = Model.save
+
+
 def save_if_valid(self, throw_exception=False, *args, **kwargs):
     """Make :meth:`save` call :meth:`full_clean`.
 
@@ -25,7 +28,7 @@ def save_if_valid(self, throw_exception=False, *args, **kwargs):
     """
     try:
         self.full_clean()
-        self.save(*args, **kwargs)
+        original_model_save(self, *args, **kwargs)
 
         return True
 
