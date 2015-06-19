@@ -29,7 +29,7 @@ def save_if_valid(self, throw_exception=False, *args, **kwargs):
     """
     try:
         self.full_clean()
-        self.save(self, *args, **kwargs)
+        self.save(*args, **kwargs)
 
         return True
 

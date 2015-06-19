@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-smart-save',
-    version='0.0.10',
+    version='0.0.11',
     description='Automatically validates when you call your model’s save()',
     author='Daniel Gatis Carrazzoni',
     author_email='danielgatis@gmail.com',
