@@ -47,10 +47,6 @@ You can specify a different method name in your project settings (default: save_
 
     SMART_SAVE_METHOD = 'my_save'
 
-Or if you want to override the default save method:
-
-    SMART_SAVE_METHOD = 'save'
-
 
 Usage Overview
 ==============
@@ -65,7 +61,7 @@ It is simple::
     False
     >>> user._errors
     {'username': ['This field cannot be blank.']}
-    
+
 License
 =======
 

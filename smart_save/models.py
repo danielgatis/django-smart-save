@@ -2,13 +2,14 @@ import sys
 
 from django.conf import settings
 from django.db.models import Model
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ValidationError, ImproperlyConfigured
 
 
 SMART_SAVE_METHOD = getattr(settings, 'SMART_SAVE_METHOD', 'save_if_valid')
 
 
-original_model_save = Model.save
+if SMART_SAVE_METHOD == 'save':
+    raise ImproperlyConfigured("SMART_SAVE_METHOD can't be 'save'")
 
 
 def save_if_valid(self, throw_exception=False, *args, **kwargs):
@@ -28,7 +29,7 @@ def save_if_valid(self, throw_exception=False, *args, **kwargs):
     """
     try:
         self.full_clean()
-        original_model_save(self, *args, **kwargs)
+        self.save(self, *args, **kwargs)
 
         return True
 
