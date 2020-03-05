@@ -5,11 +5,20 @@ django-smart-save
 Adds the method ``save_if_valid`` to ``Model``, which calls both
 ``full_clean`` and ``save``.
 
-|Downloads|
+|Downloads| |DownloadsMonth| |DownloadsWeek| |License|
 
 .. |Downloads| image:: https://pepy.tech/badge/django-smart-save
    :target: https://pepy.tech/project/django-smart-save
 
+.. |DownloadsMonth| image:: https://pepy.tech/badge/django-smart-save/month
+   :target: https://pepy.tech/project/django-smart-save/month
+
+.. |DownloadsWeek| image:: https://pepy.tech/badge/django-smart-save/week
+   :target: https://pepy.tech/project/django-smart-save/week
+
+.. |License| image:: https://img.shields.io/badge/License-BSD%203--Clause-blue.svg
+   :target: https://opensource.org/licenses/BSD-3-Clause
+   
 Motivation
 ==========
 
