@@ -2,7 +2,8 @@
 django-smart-save
 ====================
 
-Make ``save`` call ``full_clean``.
+Adds the method ``save_if_valid`` to ``Model``, which calls both
+``full_clean`` and ``save``.
 
 Do you think Django models ``save`` method will validate all fields
 (i.e. call ``full_clean``) before saving or any time at all? Wrong!
