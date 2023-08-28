@@ -2,16 +2,7 @@
 django-smart-save 
 ====================
 
-|Downloads| |DownloadsMonth| |DownloadsWeek| |License|
-
-.. |Downloads| image:: https://pepy.tech/badge/django-smart-save
-   :target: https://pepy.tech/project/django-smart-save
-
-.. |DownloadsMonth| image:: https://pepy.tech/badge/django-smart-save/month
-   :target: https://pepy.tech/project/django-smart-save/month
-
-.. |DownloadsWeek| image:: https://pepy.tech/badge/django-smart-save/week
-   :target: https://pepy.tech/project/django-smart-save/week
+|License|
 
 .. |License| image:: https://img.shields.io/badge/License-BSD%202--Clause-blue.svg
    :target: https://opensource.org/licenses/BSD-2-Clause
